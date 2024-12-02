@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>Edit Bookmark</h2>
+
+<mat-dialog-content class="mat-typography">
+  <div class="form">
+    <form [formGroup]="bookmarkForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title" />
+      </mat-form-field>
+
+      <div *ngIf="bookmarkForm.get('title')?.invalid && bookmarkForm.get('title')?.touched">
+        <small class="text-danger">Title is required</small>
+      </div>
+
+      <br>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>URL</mat-label>
+        <input matInput formControlName="url" />
+      </mat-form-field>
+
+       <div *ngIf="bookmarkForm.get('url')?.invalid && bookmarkForm.get('url')?.touched">
+        <small class="text-danger">A valid URL is required</small>
+      </div>
+      
+    </form>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" (click)="onSave()" [disabled]="!bookmarkForm.valid">Save</button>
+</mat-dialog-actions>

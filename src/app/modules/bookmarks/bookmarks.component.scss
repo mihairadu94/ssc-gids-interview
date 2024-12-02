@@ -1,0 +1,36 @@
+.date-time {
+    text-align: left;
+    color: slategray;
+}
+
+.new-bookmark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: slategray;
+    color: white;
+    padding: 10px 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: relative;
+
+    .mat-icon {
+        margin-left: 4px;
+    }
+
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .bookmark-icon {
+        position: absolute;
+        right: 10px;
+    }
+
+    .add-icon {
+        margin-right: 4px;
+    }
+}

@@ -1,0 +1,18 @@
+<div class="main-container">
+
+    <div class="bookmark">
+        <div class="content">
+            <mat-icon matSuffix>bookmark</mat-icon>
+            <div class="details">
+                <p class="m-0 title"> {{ title }} </p>
+                <a [href]="url" class="m-0 href" target="_blank"> {{ url }} </a>
+            </div>
+        </div>
+        <div>
+            <mat-icon class="edit-icon" matSuffix (click)="onRemoveClick();">delete</mat-icon>
+            <mat-icon class="edit-icon" matSuffix (click)="onEditClick();">edit</mat-icon>
+        </div>
+    </div>
+    <br>
+
+</div>

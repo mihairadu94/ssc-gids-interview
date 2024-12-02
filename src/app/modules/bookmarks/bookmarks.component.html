@@ -1,0 +1,59 @@
+
+<div class="new-bookmark">
+  <div class="btn" (click)="openAddDialog()">
+    <mat-icon class="add-icon" matSuffix>
+      add_box
+    </mat-icon>
+    Add new bookmark
+  </div>
+  <mat-icon class="bookmark-icon" matSuffix>star_outline</mat-icon>
+</div>
+
+@if (bookmarks.length) {
+  <h3 class="mb-0 date-time">Today</h3>
+  @if (todayBookmarks.length) {
+    @for (bookmark of todayBookmarks; track bookmark) {
+      <app-bookmark
+      [title]="bookmark.title"
+      [url]="bookmark.url"
+      [bookmark]="bookmark"
+      (editClicked)="openEditModal($event)"
+      (removeClicked)="openRemoveDialog($event)"
+      ></app-bookmark>
+    }
+  } @else {
+    <p class="mb-0 date-time">No bookmarks for "<b>Today</b>" category.</p>
+  }
+  
+  <h3 class="mb-0 date-time">Yesterday</h3>
+  @if (yesterdayBookmarks.length) {
+    @for (bookmark of yesterdayBookmarks; track bookmark) {
+      <app-bookmark
+      [title]="bookmark.title"
+      [url]="bookmark.url"
+      [bookmark]="bookmark"
+      (editClicked)="openEditModal($event)"
+      (removeClicked)="openRemoveDialog($event)"
+      ></app-bookmark>
+    }
+  } @else {
+    <p class="mb-0 date-time">No bookmarks for "<b>Yesterday</b>" category.</p>
+  }
+  
+  <h3 class="mb-0 date-time">Older</h3>
+  @if (olderBookmarks.length) {
+    @for (bookmark of olderBookmarks; track bookmark) {
+      <app-bookmark
+      [title]="bookmark.title"
+      [url]="bookmark.url"
+      [bookmark]="bookmark"
+      (editClicked)="openEditModal($event)"
+      (removeClicked)="openRemoveDialog($event)"
+      ></app-bookmark>
+    }
+  } @else {
+    <p class="mb-0 date-time">No bookmarks for "<b>Older</b>" category.</p>
+  }
+} @else {
+  <p class="mb-0 date-time">You don't have any bookmarks yet. Start bookmarking.</p>
+}

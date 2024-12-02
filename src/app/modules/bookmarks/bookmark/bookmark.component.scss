@@ -1,0 +1,43 @@
+@import '../../../styles/variables';
+
+.bookmark {
+    display: flex;
+    align-items: center;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.bookmark .details {
+    padding-left: 25px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookmark {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.data-label {
+    text-align: center;
+}
+
+.href {
+    color: $href;
+    text-decoration: none;
+}
+
+.title {
+    text-align: left;
+}
+
+.edit-icon {
+    cursor: pointer;
+}
